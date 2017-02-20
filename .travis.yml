@@ -20,8 +20,8 @@ android:
 
 
 before_install:
-    - android --help
     - android list sdk
+    - android --help
 #    - android-update-sdk --help
     - chmod +x gradlew
     - chmod +x cdep
