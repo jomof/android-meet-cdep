@@ -8,29 +8,25 @@ env:
 
 android:
   components:
-#    - cmake
-#    - tools
-#    - build-tools-$ANDROID_BUILD_TOOLS_VERSION
-#    - android-$ANDROID_API_LEVEL
-#    - extra-google-google_play_services
-#    - extra-google-m2repository
-#    - extra-android-m2repository
-#    - extra-android-support
-#    - sys-img-x86-google_apis-21
+    - cmake
+    - tools
+    - build-tools-$ANDROID_BUILD_TOOLS_VERSION
+    - android-$ANDROID_API_LEVEL
+    - extra-google-google_play_services
+    - extra-google-m2repository
+    - extra-android-m2repository
+    - extra-android-support
+    - sys-img-x86-google_apis-21
 
 
 before_install:
-#    - android list sdk
-#    - android --help
-#    - android-update-sdk --help
     - chmod +x gradlew
     - chmod +x cdep
-    - wget --no-check-certificate https://dl.google.com/android/repository/android-ndk-r13b-linux-x86_64.zip -O android-ndk-r13b-linux-x86_64.zip
-    #> android-ndk-r13b-linux-x86_64.zip.download-log 2>&1
-    - unzip android-ndk-r13b-linux-x86_64.zip > android-ndk-r13b-linux-x86_64.uncompress-log 2>&1
-    - export ANDROID_NDK_HOME=$PWD/android-ndk-r13b
 
 install:
+  - wget --no-check-certificate https://dl.google.com/android/repository/android-ndk-r13b-linux-x86_64.zip -O android-ndk-r13b-linux-x86_64.zip
+  - unzip android-ndk-r13b-linux-x86_64.zip > android-ndk-r13b-linux-x86_64.uncompress-log 2>&1
+  - export ANDROID_NDK_HOME=$PWD/android-ndk-r13b
   - wget https://github.com/Commit451/android-cmake-installer/releases/download/1.1.0/install-cmake.sh
   - chmod +x install-cmake.sh
   - "./install-cmake.sh"
