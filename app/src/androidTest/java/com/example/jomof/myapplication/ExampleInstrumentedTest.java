@@ -22,6 +22,7 @@ public class ExampleInstrumentedTest {
 
     public native String checkSqlite();
     public native String checkBoost();
+    public native String checkVectorial();
 
     @Test
     public void useAppContext() throws Exception {
@@ -39,6 +40,11 @@ public class ExampleInstrumentedTest {
     @Test
     public void testCheckBoost() {
         assertThat(checkBoost()).isEqualTo("Boost OK");
+    }
+
+    @Test
+    public void testCheckVectorial() {
+        assertThat(checkVectorial()).isEqualTo("Vectorial OK");
     }
 
     static {

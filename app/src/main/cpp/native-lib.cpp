@@ -3,6 +3,7 @@
 #include <sqlite3.h>
 #include <boost/numeric/ublas/matrix.hpp>
 #include <boost/numeric/ublas/io.hpp>
+#include <vectorial/simd4f.h>
 
 extern "C"
 jstring
@@ -40,5 +41,16 @@ Java_com_example_jomof_myapplication_ExampleInstrumentedTest_checkBoost(
         }
     }
     std::string result = "Boost OK";
+    return env->NewStringUTF(result.c_str());
+}
+
+extern "C"
+jstring
+Java_com_example_jomof_myapplication_ExampleInstrumentedTest_checkVectorial(
+        JNIEnv* env,
+        jobject /* this */) {
+    auto v = simd4f_add( simd4f_create(1,2,3,4), simd4f_create(1,2,3,4));
+    float z = simd4f_get_z(v);
+    std::string result = "Vectorial OK";
     return env->NewStringUTF(result.c_str());
 }
