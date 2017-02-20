@@ -1,6 +1,13 @@
 language: android
 jdk: oraclejdk8
 
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - cmake
+    - g++-6
 env:
   global:
     - ANDROID_API_LEVEL=24
@@ -46,3 +53,4 @@ script:
   - emulator -avd testemulator -no-skin -no-audio -no-window &
   - android-wait-for-emulator
   - adb shell input keyevent 82 &
+  - ./gradlew connectedAndroidTest
