@@ -20,8 +20,8 @@ android:
 
 
 before_install:
-    - android list sdk
-    - android --help
+#    - android list sdk
+#    - android --help
 #    - android-update-sdk --help
     - chmod +x gradlew
     - chmod +x cdep
@@ -29,6 +29,12 @@ before_install:
     #> android-ndk-r13b-linux-x86_64.zip.download-log 2>&1
     - unzip android-ndk-r13b-linux-x86_64.zip > android-ndk-r13b-linux-x86_64.uncompress-log 2>&1
     - export ANDROID_NDK_HOME=$PWD/android-ndk-r13b
+
+install:
+  - wget https://github.com/Commit451/android-cmake-installer/releases/download/1.1.0/install-cmake.sh
+  - chmod +x install-cmake.sh
+  - "./install-cmake.sh"
+  - find ${ANDROID_HOME}cmake/*/bin/cmake
 
 script:
   - ./cdep
