@@ -8,14 +8,14 @@ env:
 
 android:
   components:
-#    - tools
-#    - build-tools-$ANDROID_BUILD_TOOLS_VERSION
-#    - android-$ANDROID_API_LEVEL
-#    - extra-google-google_play_services
-#    - extra-google-m2repository
-#    - extra-android-m2repository
-#    - extra-android-support
-#    - sys-img-x86-google_apis-21
+    - tools
+    - build-tools-$ANDROID_BUILD_TOOLS_VERSION
+    - android-$ANDROID_API_LEVEL
+    - extra-google-google_play_services
+    - extra-google-m2repository
+    - extra-android-m2repository
+    - extra-android-support
+    - sys-img-x86-google_apis-21
 
 
 before_install:
