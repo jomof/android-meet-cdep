@@ -21,6 +21,10 @@ android:
 before_install:
     - chmod +x gradlew
     - chmod +x cdep
+    - wget --no-check-certificate https://dl.google.com/android/repository/android-ndk-r13b-linux-x86_64.zip -O android-ndk-r13b-linux-x86_64.zip > android-ndk-r13b-linux-x86_64.zip.download-log 2>&1
+    - android-ndk-r13b-linux-x86_64.zip
+    - unzip android-ndk-r13b-linux-x86_64.zip > android-ndk-r13b-linux-x86_64.uncompress-log 2>&1
+    - export ANDROID_NDK_HOME=$pwd/android-ndk-r13b
 
 script:
   - ./cdep
