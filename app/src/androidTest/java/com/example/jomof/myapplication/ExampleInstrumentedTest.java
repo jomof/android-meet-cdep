@@ -21,6 +21,7 @@ import static org.junit.Assert.*;
 public class ExampleInstrumentedTest {
 
     public native String checkSqlite();
+    public native String checkBoost();
 
     @Test
     public void useAppContext() throws Exception {
@@ -33,6 +34,11 @@ public class ExampleInstrumentedTest {
     @Test
     public void testCheckSqlite() {
         assertThat(checkSqlite()).isEqualTo("SQLITE_OK");
+    }
+
+    @Test
+    public void testCheckBoost() {
+        assertThat(checkBoost()).isEqualTo("Boost OK");
     }
 
     static {

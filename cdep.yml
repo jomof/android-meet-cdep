@@ -1,4 +1,4 @@
 builders: [cmake]
 dependencies:
 - compile: com.github.jomof:sqlite:3.16.2-rev14
-#- compile: com.github.jomof:yaml-cpps:0.5.3-rev5
+- compile: com.github.jomof:boost:1.0.63-rev10
