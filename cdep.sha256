@@ -8,8 +8,8 @@
 # The recommended best practice is to check this file into source control so that
 # anyone else who builds this project is guaranteed to get the same dependencies.
 
-- coordinate: com.github.jomof:sqlite:3.16.2-rev14
-  sha256: 674408a6288813c03da78756d1cfb2cce46543187d6bf4ebbd2f6f79bf814c89
+- coordinate: com.github.jomof:sqlite:3.16.2-rev16
+  sha256: ba6d816d10c3c9ffb43123e518137a92c432b42a1fc19f88a8216f4d393d7322
 - coordinate: com.github.jomof:boost:1.0.63-rev10
   sha256: 52f1d036d846a7da17f6cbeb2594cbcaae632e2f36abeaed6ea4ed189df1a7f2
 - coordinate: com.github.jomof:mathfu:1.0.2-rev1
