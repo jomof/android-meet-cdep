@@ -4,6 +4,7 @@
 #include <boost/numeric/ublas/matrix.hpp>
 #include <boost/numeric/ublas/io.hpp>
 #include <vectorial/simd4f.h>
+#include <mathfu/glsl_mappings.h>
 
 extern "C"
 jstring
@@ -52,5 +53,20 @@ Java_com_example_jomof_myapplication_ExampleInstrumentedTest_checkVectorial(
     auto v = simd4f_add( simd4f_create(1,2,3,4), simd4f_create(1,2,3,4));
     float z = simd4f_get_z(v);
     std::string result = "Vectorial OK";
+    return env->NewStringUTF(result.c_str());
+}
+
+extern "C"
+jstring
+Java_com_example_jomof_myapplication_ExampleInstrumentedTest_checkMathFu(
+        JNIEnv* env,
+        jobject /* this */) {
+    const mathfu::vec4 vector(1.0f, 2.0f, 3.0f, 4.0f);
+    float x = vector.x();
+    float y = vector.y();
+    float z = vector.z();
+    float w = vector.w();
+    mathfu::vec4 vector3 = vector + vector;
+    std::string result = "MathFu OK";
     return env->NewStringUTF(result.c_str());
 }

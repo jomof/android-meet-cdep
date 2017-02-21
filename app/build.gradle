@@ -13,6 +13,7 @@ android {
         externalNativeBuild {
             cmake {
                 arguments "-Dcdep-dependencies_DIR=../.cdep/modules"
+                //cppFlags "-DMATHFU_COMPILE_WITH_SIMD"
             }
         }
         ndk {
