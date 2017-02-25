@@ -62,11 +62,7 @@ Java_com_example_jomof_myapplication_ExampleInstrumentedTest_checkMathFu(
         JNIEnv* env,
         jobject /* this */) {
     const mathfu::vec4 v(1.0f, 2.0f, 3.0f, 4.0f);
-    auto x = v.x();
-    auto y = v.y();
-    auto z = v.z();
-    auto w = v.w();
-    mathfu::vec4 vector3 = vector + vector;
+    mathfu::vec4 v2 = v + v;
     std::string result = "MathFu OK";
     return env->NewStringUTF(result.c_str());
 }
