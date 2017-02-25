@@ -61,11 +61,11 @@ jstring
 Java_com_example_jomof_myapplication_ExampleInstrumentedTest_checkMathFu(
         JNIEnv* env,
         jobject /* this */) {
-    const mathfu::vec4 vector(1.0f, 2.0f, 3.0f, 4.0f);
-    float x = vector.x();
-    float y = vector.y();
-    float z = vector.z();
-    float w = vector.w();
+    const mathfu::vec4 v(1.0f, 2.0f, 3.0f, 4.0f);
+    auto x = v.x();
+    auto y = v.y();
+    auto z = v.z();
+    auto w = v.w();
     mathfu::vec4 vector3 = vector + vector;
     std::string result = "MathFu OK";
     return env->NewStringUTF(result.c_str());
