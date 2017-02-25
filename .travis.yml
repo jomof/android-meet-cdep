@@ -41,6 +41,7 @@ install:
 
 script:
   - ./cdep
+  - cat cdep.sha256
   - ./gradlew assemble
 
   - android list targets
