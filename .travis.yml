@@ -29,6 +29,7 @@ android:
 before_install:
     - chmod +x gradlew
     - chmod +x cdep
+    - set -e
     - ./cdep
     - cat cdep.sha256
     
