@@ -5,14 +5,14 @@
 @rem
 @rem ##########################################################################
 
-set MANIFEST=https://raw.githubusercontent.com/jomof/cdep/master/bootstrap.yml
+set MANIFEST=https://raw.githubusercontent.com/jomof/cdep/master/boot.yml
 
 @rem Set local scope for the variables with windows NT shell
 if "%OS%"=="Windows_NT" setlocal
 
 set DIRNAME=%~dp0
 if "%DIRNAME%" == "" set DIRNAME=.
-set APP_BASE_NAME=%~n0
+set APP_BASE_NAME=%~0
 set APP_HOME=%DIRNAME%
 
 @rem Add default JVM options here. You can also use JAVA_OPTS and CDEP_OPTS to pass JVM options to this script.
@@ -68,7 +68,7 @@ set CMD_LINE_ARGS=%*
 set CLASSPATH=%APP_HOME%\bootstrap\wrapper\bootstrap.jar
 
 @rem Execute Bootstrap
-"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %CDEP_OPTS% "-Dio.cdep.appname=%APP_BASE_NAME%" -classpath "%CLASSPATH%" com.jomofisher.bootstrap.Bootstrap %MANIFEST% %CMD_LINE_ARGS%
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %CDEP_OPTS% "-Dio.cdep.appname=%APP_BASE_NAME%" -classpath "%CLASSPATH%" io.cdep.bootstrap.Bootstrap %MANIFEST% %CMD_LINE_ARGS%
 
 :end
 @rem End local scope for the variables with windows NT shell
