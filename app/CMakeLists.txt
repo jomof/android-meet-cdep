@@ -54,5 +54,5 @@ target_link_libraries( # Specifies the target library.
 message("-------------------------> " ${CMAKE_SYSTEM_PROCESSOR})
 get_cmake_property(_variableNames VARIABLES)
 foreach (_variableName ${_variableNames})
-   message(STATUS "${_variableName}=${${_variableName}}")
+   message(WARNING "${_variableName}=${${_variableName}}")
 endforeach()
