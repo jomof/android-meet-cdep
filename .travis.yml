@@ -19,9 +19,9 @@ android:
     - cmake
     - tools
     - build-tools-$ANDROID_BUILD_TOOLS_VERSION
-    - build-tools-24.0.0
+    - build-tools-25.0.0
     - android-$ANDROID_API_LEVEL
-    - android-25
+    - android-24
     - extra-google-google_play_services
     - extra-google-m2repository
     - extra-android-m2repository
