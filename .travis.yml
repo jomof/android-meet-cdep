@@ -21,6 +21,11 @@ before_install:
   - unzip -oq android-ndk-r16b-linux-x86_64.zip
   - rm android-ndk-r16b-linux-x86_64.zip
   - export ANDROID_NDK_HOME=$HOME/android-ndk-r16b
+  - chmod +x gradlew
+  - chmod +x cdep
+  - set -e
+  - ./cdep
+  - cat cdep.sha256
 script:
   # check that all Support section of the README are the same.
   #- for f in */README.md; do sed -n '/Support/,/License/p' $f > /tmp/$(dirname $f).readme; done && diff -u --from-file=/tmp/hello-jni.readme /tmp/*.readme
