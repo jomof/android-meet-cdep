@@ -40,8 +40,6 @@ find_library( # Sets the name of the path variable.
 # Specifies libraries CMake should link to your target library. You
 # can link multiple libraries, such as libraries you define in the
 # build script, prebuilt third-party libraries, or system libraries.
-message("log-lib:" ${log-lib})
-message("sqllite:" ${SQLLITE_LIBRARIES})
 target_link_libraries( # Specifies the target library.
                        native-lib
 
@@ -50,9 +48,3 @@ target_link_libraries( # Specifies the target library.
                        ${log-lib}
                        ${SQLLITE_LIBRARIES}
                        )
-
-message("-------------------------> " ${CMAKE_SYSTEM_PROCESSOR})
-get_cmake_property(_variableNames VARIABLES)
-foreach (_variableName ${_variableNames})
-   message(WARNING "${_variableName}=${${_variableName}}")
-endforeach()

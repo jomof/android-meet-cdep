@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "25.0.0"
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
     defaultConfig {
         applicationId "com.example.jomof.myapplication"
         minSdkVersion 15
-        targetSdkVersion 24
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -34,14 +34,14 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:24.2.1'
-    testCompile 'junit:junit:4.12'
-    testCompile group: 'com.google.guava', name: 'guava', version: '20.0'
-    testCompile group: 'com.google.truth', name: 'truth', version: '0.31'
-    androidTestCompile('com.google.guava:guava:20.0')
-    androidTestCompile('com.google.truth:truth:0.31')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    testImplementation 'junit:junit:4.12'
+    testImplementation group: 'com.google.guava', name: 'guava', version: '22.0'
+    testImplementation group: 'com.google.truth', name: 'truth', version: '0.39'
+    androidTestImplementation('com.google.guava:guava:20.0')
+    androidTestImplementation('com.google.truth:truth:0.31')
 }
